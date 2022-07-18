@@ -1,0 +1,40 @@
+[user]
+	name = Marcello Gurgel Sasaki
+[merge]
+	tool = meld
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+
+[alias]
+
+# Generic
+  default = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+  whoami = "!f() { printf '%s <%s>\n' \"$(git config --get user.name)\" \"$(git config --get user.email)\" ; }; f"
+
+# Commiting
+  save = !git add -A && git commit -m 'SAVEPOINT'
+  wip = !git add -u && git commit -m "WIP"
+  undo = reset HEAD~1 --soft
+
+# Inspecting
+  st = status
+  lg = log --all --graph --decorate --online --abbrev-commit
+
+# Branching, merging, and updating
+  co = checkout
+  cob = checkout -b
+  delete-merged-branches = "!f() { git branch --merged | grep --invert-match '*' | xargs --no-run-if-empty git branch --delete; }; f"
+
+# Updating from and pushing to remote
+  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  publish = "!f() { git push --verbose --set-upstream origin $(git branch-name); }; f"
+  unpublish = "!f() { git push --verbose origin --delete $(git branch-name) ; }; f"
+  
+# Rebasing, rewriting history
+  rb = rebase
+  rba = rebase --abort
+  rbas = rebase --autostash
+  rbc = rebase --continue
+  rbi = rebase --interactive
