@@ -8,7 +8,27 @@ sudo apt-get install -y chrome-gnome-shell gnome-tweak-tool
 # TODO: Instal gnome shell extensions: Dash to Dock, User Themes
 
 # Install dev basic packages
-sudo apt install build-essential default-jdk git git-gui gitk tmux tilix
+sudo apt install \
+    build-essential \
+    git git-gui gitk \
+    meld \
+    tmux \
+    tilix \
+    default-jdk \
+    curl
+
+
+##########
+# Install asdf-vm (https://github.com/asdf-vm/asdf)
+# (https://asdf-vm.com/guide/getting-started.html)
+##########
+ASDF_BRANCH="v0.10.2"
+git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch $ASDF_BRANCH
+. $HOME/.asdf/asdf.sh
+asdf update
+echo "Install asdf by putting the following lines on ~/.bashrc"
+echo '. $HOME/.asdf/asdf.sh'
+echo '. $HOME/.asdf/completions/asdf.bash'
 
 # TODO: dotfiles (https://github.com/skwp/dotfiles)
 
@@ -62,7 +82,6 @@ echo -e '\n=> Removing Sudo requirement Docker'
 sudo usermod -aG docker ${USER}
 
 
-# TODO: Install asdf-vm (https://github.com/asdf-vm/asdf)
 # TODO: Install bash-git-prompt (https://github.com/magicmonty/bash-git-prompt)
 
 # https://github.com/Vanderscycle/dot-config/blob/main/postInstallScripts/ubuntuPostInstall.sh
