@@ -38,3 +38,4 @@
   rbas = rebase --autostash
   rbc = rebase --continue
   rbi = rebase --interactive
+  rbs = rebase --skip
