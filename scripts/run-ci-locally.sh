@@ -8,6 +8,9 @@ printf '\x1B[1;36mRunning job "%q" for project "%q"...\x1B[0m\n' "$1" "$PROJECT_
 gitlab-runner exec docker \
 	--docker-volumes $REPOS_DIR:$REPOS_DIR \
 	--docker-volumes /tmp/gitlab-runner-cache/$PROJECT_NAME:/tmp/gitlab-runner-cache \
+	--docker-cache-dir /tmp/gitlab-runner-cache \
 	--cache-dir /tmp/gitlab-runner-cache \
         --env CI_MBED_PACKAGE=framework-mbed \
+	--env CI_API_V4_URL=https://gitlab.com/api/v4 \
+	--env CI_COMMIT_REF_SLUG=$(git rev-parse --short HEAD) \
 	$1
