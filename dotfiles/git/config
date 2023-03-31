@@ -39,3 +39,6 @@
   rbc = rebase --continue
   rbi = rebase --interactive
   rbs = rebase --skip
+
+# Tools
+  meld = difftool --dir-diff
