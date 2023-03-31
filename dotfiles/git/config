@@ -15,7 +15,8 @@
 
 # Commiting
   save = !git add -A && git commit -m 'SAVEPOINT'
-  wip = !git add -u && git commit -m "WIP"
+  fixup = !git add -A && git commit --amend
+  wip = !git add -u && git commit -m 'WIP!'
   undo = reset HEAD~1 --soft
 
 # Inspecting
@@ -39,6 +40,8 @@
   rbc = rebase --continue
   rbi = rebase --interactive
   rbs = rebase --skip
+  rbiq = rebase --interactive --autosquash
+  rbiasq = rebase --interactive --autostash --autosquash
 
 # Tools
   meld = difftool --dir-diff
