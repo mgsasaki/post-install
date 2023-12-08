@@ -99,6 +99,10 @@ echo -e '\n=> Removing Sudo requirement Docker'
 #sudo groupadd docker
 sudo usermod -aG docker ${USER}
 
+# Install dark theme for git gui
+# https://wiki.tcl-lang.org/page/List+of+ttk+Themes
+# https://blog.serindu.com/2019/03/07/applying-tk-themes-to-git-gui/
+
 # Install powerline for bash?
 # sudo apt-get install powerline fonts-powerline
 # echo "Install powerline for bash by putting the following lines on ~/.bashrc"
