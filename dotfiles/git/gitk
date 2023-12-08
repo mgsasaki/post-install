@@ -1,7 +1,7 @@
 set mainfont {sans 9}
 set textfont {monospace 9}
 set uifont {sans 9 bold}
-set tabstop 8
+set tabstop 4
 set findmergefiles 0
 set maxgraphpct 50
 set maxwidth 16
@@ -17,7 +17,7 @@ set showlocalchanges 1
 set datetimeformat {%Y-%m-%d %H:%M:%S}
 set limitdiffs 1
 set uicolor #44475a
-set want_ttk 0
+set want_ttk 1
 set bgcolor #282a36
 set fgcolor #f8f8f2
 set uifgcolor #f8f8f2
@@ -25,9 +25,9 @@ set uifgdisabledcolor #6272a4
 set colors {#50fa7b #ff5555 #bd93f9 #ff79c6 #f8f8f8 #ffb86c #ffb86c}
 set diffcolors {#ff5555 #50fa7b #bd93f9}
 set mergecolors {#ff5555 #bd93f9 #50fa7b #bd93f9 #ffb86c #8be9fd #ff79c6 #f1fa8c #8be9fd #ff79c6 #8be9fd #ffb86c #8be9fd #50fa7b #ffb86c #ff79c6}
-set markbgcolor #282a36
+set markbgcolor #282a8e
 set diffcontext 3
-set selectbgcolor #44475a
+set selectbgcolor #444790
 set foundbgcolor #f1fa8c
 set currentsearchhitbgcolor #ffb86c
 set extdifftool meld
@@ -53,12 +53,12 @@ set linkfgcolor #bd93f9
 set circleoutlinecolor #44475a
 set diffbgcolors {{#342a36} #283636}
 set web_browser xdg-open
-set geometry(main) 1920x997+0+0
+set geometry(main) 1920x990+0+0
 set geometry(state) normal
-set geometry(topwidth) 1918
-set geometry(topheight) 517
-set geometry(pwsash0) "1141 1"
-set geometry(pwsash1) "1145 1"
-set geometry(botwidth) 1310
-set geometry(botheight) 468
+set geometry(topwidth) 1920
+set geometry(topheight) 495
+set geometry(pwsash0) "1333 1"
+set geometry(pwsash1) "1743 1"
+set geometry(botwidth) 1333
+set geometry(botheight) 490
 set permviews {}
