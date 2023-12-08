@@ -21,7 +21,7 @@
 
 # Inspecting
   st = status
-  lg = log --all --graph --decorate --online --abbrev-commit
+  lg = log --all --graph --decorate --oneline --abbrev-commit
 
 # Branching, merging, and updating
   co = checkout
@@ -44,4 +44,4 @@
   rbiasq = rebase --interactive --autostash --autosquash
 
 # Tools
-  meld = difftool --dir-diff
+  dt = difftool --dir-diff
