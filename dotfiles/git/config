@@ -2,6 +2,9 @@
 	name = Marcello Gurgel Sasaki
 [merge]
 	tool = meld
+[diff]
+	tool = meld
+	colorMoved = zebra
 [pull]
 	rebase = true
 [fetch]
@@ -20,7 +23,7 @@
   undo = reset HEAD~1 --soft
 
 # Inspecting
-  st = status
+  st = status --branch
   lg = log --all --graph --decorate --oneline --abbrev-commit
 
 # Branching, merging, and updating
