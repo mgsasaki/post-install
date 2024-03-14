@@ -21,6 +21,7 @@
   fixup = !git add -A && git commit --amend
   wip = !git add -u && git commit -m 'WIP!'
   undo = reset HEAD~1 --soft
+  undo-save = !git undo && git restore --staged .
 
 # Inspecting
   st = status --branch
@@ -45,6 +46,8 @@
   rbs = rebase --skip
   rbiq = rebase --interactive --autosquash
   rbiasq = rebase --interactive --autostash --autosquash
+  rb-tag-before = tag -f BEFORE_REBASE
+  rb-compare-before = diff BEFORE_REBASE
 
 # Tools
   dt = difftool --dir-diff
