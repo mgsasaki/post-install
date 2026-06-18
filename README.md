@@ -7,9 +7,12 @@ Bootstrap a fresh machine: install tooling and symlink dotfiles.
 ```
 .
 ├── macos/              # macOS (Apple Silicon) bootstrap
-│   ├── setup.sh        #   Homebrew + brew bundle + asdf + dotfile symlinks
+│   ├── setup.sh        #   Homebrew + Brewfile.core + asdf + dotfile symlinks
 │   ├── asdf-plugins.txt#   asdf plugins to re-add on the new machine
-│   └── Brewfile        #   apps & CLI tools (review before running)
+│   ├── Brewfile.core   #   CLI/shell/asdf/fonts — AUTO-installed by setup.sh
+│   ├── Brewfile.apps   #   GUI apps — install on demand (brew install --cask X)
+│   ├── Brewfile.all    #   everything in one (backup; bulk install if ever wanted)
+│   └── NOTES.md        #   macOS-specific git/keychain notes
 ├── post-install.sh     # legacy Ubuntu/Linux bootstrap (apt/snap/asdf)
 ├── .tool-versions      # runtime versions (asdf/mise)
 ├── dotfiles/
@@ -27,10 +30,13 @@ cd ~/developer/github/post-install
 ./macos/setup.sh
 ```
 
-`setup.sh` is idempotent and backs up any existing dotfiles before symlinking.
-It does **not** handle secrets, per-app cloud-sync settings, or the VPN — those are
-manual steps it prints at the end (and are detailed in the migration kit under
-`~/mac-migration/`).
+`setup.sh` installs only **`Brewfile.core`** (CLI, shell, asdf, fonts) — it does
+**not** install GUI apps. Pull those on demand later, e.g. `brew install --cask cursor`
+(see `Brewfile.apps`), or all at once with `brew bundle --file=macos/Brewfile.apps`.
+
+It's idempotent and backs up any existing dotfiles before symlinking. It also does
+**not** handle secrets, per-app cloud-sync settings, or the VPN — those are manual
+steps it prints at the end (detailed in the migration kit under `~/mac-migration/`).
 
 ## Linux (Ubuntu)
 

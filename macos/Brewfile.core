@@ -1,0 +1,41 @@
+# Brewfile.core — the BASE, auto-installed by setup.sh.
+# CLI tooling, shell/prompt, runtime manager, fonts. No GUI apps.
+#   brew bundle --file=macos/Brewfile.core
+# Runtimes (node, java, ruby, python, bun, awscli, pnpm, yarn, gradle, maven…) come
+# via asdf + .tool-versions — NOT brew — so they're intentionally not listed here.
+
+# --- core CLI ---
+brew "git"
+brew "git-lfs"
+brew "gh"              # GitHub CLI
+brew "glab"            # GitLab CLI (you use it; config in the secrets bundle)
+brew "wget"
+brew "curl"
+brew "coreutils"
+brew "telnet"          # for your gogo-shell alias
+brew "jq"
+brew "ripgrep"
+brew "fzf"
+brew "tree"
+brew "watch"
+brew "htop"
+brew "tmux"
+brew "neovim"
+brew "ffmpeg"
+brew "pandoc"
+brew "ghostscript"
+brew "graphviz"        # PlantUML / diagrams
+brew "ncdu"
+brew "lnav"            # log navigator — custom formats restore to ~/.config/lnav
+
+# --- shell / prompt ---
+brew "bash"            # macOS ships an ancient bash; this is current
+brew "zsh"
+brew "powerlevel10k"   # you use .p10k.zsh
+brew "bash-git-prompt"
+
+# --- runtime version manager ---
+brew "asdf"            # reads .tool-versions; setup.sh re-adds plugins from asdf-plugins.txt
+
+# --- fonts (powerlevel10k prompt icons) ---
+cask "font-meslo-lg-nerd-font"

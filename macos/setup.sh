@@ -17,8 +17,11 @@ if ! command -v brew >/dev/null 2>&1; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-echo "==> 2/4 brew bundle (apps + CLI)"
-brew bundle --file="$REPO/macos/Brewfile" || echo "  ! some casks failed — review and re-run"
+echo "==> 2/4 brew bundle — CORE only (CLI, shell, asdf, fonts; NO GUI apps)"
+brew bundle --file="$REPO/macos/Brewfile.core" || echo "  ! some formulae failed — review and re-run"
+echo "    GUI apps are NOT auto-installed. Install on demand:"
+echo "      brew install --cask cursor                       # one app when you need it"
+echo "      brew bundle --file=$REPO/macos/Brewfile.apps     # or all of them at once"
 
 echo "==> 3/4 runtime versions via asdf (.tool-versions)"
 command -v asdf >/dev/null 2>&1 || echo "  ! asdf not found (brew bundle should have installed it)"

@@ -1,0 +1,72 @@
+# Brewfile.apps — GUI apps, installed ON DEMAND (NOT by setup.sh).
+# Install one when you need it:
+#   brew install --cask cursor
+# Or install everything at once if you ever want to:
+#   brew bundle --file=macos/Brewfile.apps
+
+# --- terminals / editors ---
+cask "iterm2"
+cask "warp"                    # you had Warp in /opt
+cask "visual-studio-code"
+cask "cursor"
+cask "windsurf"
+cask "sublime-text"
+cask "intellij-idea"           # or install via JetBrains Toolbox
+
+# --- AI desktop ---
+cask "claude"                  # Claude Desktop
+
+# --- browsers ---
+cask "google-chrome"
+cask "firefox"
+
+# --- comms ---
+cask "slack"
+cask "discord"
+cask "zoom"
+cask "spotify"
+
+# --- containers / VMs ---
+cask "docker"                  # Docker Desktop (Apple Silicon)
+cask "utm"                     # ARM VM host (VirtualBox x86 VMs won't run natively)
+# cask "whisky"                # Wine/CrossOver for ARM, for Windows apps without a VM
+
+# --- databases / data ---
+brew "postgresql@16"           # needed to restore the pg_dumpall dumps
+brew "libpq"
+cask "dbeaver-community"       # your saved connections restore here
+cask "tableplus"
+cask "pgadmin4"
+cask "postman"
+cask "beyond-compare"          # you had bcompare on Linux
+
+# --- VPN ---
+cask "viscosity"               # activate with your 2017 SparkLabs license
+# cask "tunnelblick"           # free alternative
+
+# --- remote access ---
+cask "windows-app"             # RDP (replaces Remmina); VNC is built into macOS
+cask "filezilla"               # FTP/SFTP
+
+# --- media / graphics ---
+cask "vlc"
+cask "gimp"
+cask "inkscape"
+cask "audacity"
+cask "plexamp"
+
+# --- office / utilities ---
+cask "obsidian"
+cask "gitkraken"
+cask "libreoffice"
+cask "balenaetcher"
+cask "imhex"                   # hex editor
+cask "meld"                    # GUI diff (matches git mergetool=meld)
+cask "rectangle"               # window management
+
+# --- mobile / embedded dev ---
+cask "android-studio"
+# Flutter / ESP-IDF: via asdf/.tool-versions + PlatformIO VS Code extension
+
+# --- gaming (optional) ---
+# cask "prismlauncher"         # Minecraft launcher
