@@ -1,0 +1,125 @@
+# Brewfile — starting point for the Mac M5. Review/trim before running:
+#   brew bundle --file=~/mac-migration/Brewfile
+# Derived from tools detected on the Linux box. Versioned runtimes (node, java,
+# ruby, python, gradle...) are best managed by mise/asdf via .tool-versions, so
+# they're commented out here — uncomment if you prefer Homebrew to own them.
+
+# --- core CLI ---
+brew "git"
+brew "git-lfs"
+brew "gh"              # GitHub CLI
+brew "wget"
+brew "curl"
+brew "coreutils"
+brew "telnet"          # for your gogo-shell alias
+brew "meld"            # git diff/merge tool (cask on mac: see below)
+brew "jq"
+brew "ripgrep"
+brew "fzf"
+brew "tree"
+brew "watch"
+brew "htop"
+brew "tmux"
+brew "neovim"
+brew "ffmpeg"
+brew "pandoc"          # you have pypandoc; native pandoc is handy
+brew "ghostscript"
+brew "graphviz"        # PlantUML / diagrams
+brew "ncdu"
+brew "lnav"            # log navigator — your custom formats restore to ~/.config/lnav
+
+# --- shell / prompt ---
+brew "bash"            # mac ships an ancient bash; this is current
+brew "zsh"
+brew "powerlevel10k"   # you use .p10k.zsh
+brew "bash-git-prompt"
+
+# --- runtime version manager ---
+brew "asdf"            # reads your .tool-versions; setup.sh re-adds plugins from asdf-plugins.txt
+
+# --- runtimes (uncomment if NOT using mise/asdf) ---
+# brew "node"
+# brew "openjdk@17"
+# brew "gradle"
+# brew "maven"
+# brew "ruby"
+# brew "python@3.12"
+# brew "pnpm"
+# brew "yarn"
+brew "bun"
+brew "awscli"
+
+# --- databases / data tools ---
+brew "postgresql@16"
+brew "libpq"
+
+# --- containers ---
+cask "docker"          # Docker Desktop (Apple Silicon build)
+
+# === GUI apps (casks) ===
+cask "visual-studio-code"
+cask "cursor"
+cask "windsurf"
+cask "intellij-idea"           # or intellij-idea-ce
+cask "sublime-text"
+cask "obsidian"
+cask "gitkraken"
+cask "google-chrome"
+cask "firefox"
+cask "slack"
+cask "discord"
+cask "spotify"
+cask "zoom"
+cask "postman"
+cask "tableplus"
+cask "pgadmin4"
+
+# --- VPN (OpenVPN client for the SEA .ovpn config) ---
+cask "viscosity"               # activate with your existing 2017 SparkLabs license (name + serial)
+# cask "tunnelblick"           # free alternative if you ever need it
+
+# --- DB / data tools (DBeaver has your saved connections) ---
+cask "dbeaver-community"
+cask "beyond-compare"          # you had bcompare on Linux
+
+# --- remote access ---
+# macOS has built-in Screen Sharing (VNC). For RDP use Windows App (ex Microsoft Remote Desktop):
+cask "windows-app"             # replaces Remmina RDP connections
+cask "filezilla"               # FTP/SFTP
+
+# --- media / graphics ---
+cask "vlc"
+cask "gimp"
+cask "inkscape"
+cask "audacity"
+cask "plexamp"                 # you run plexamp.appimage
+
+# --- office / utilities ---
+cask "libreoffice"
+cask "balenaetcher"
+cask "imhex"                   # hex editor you use (imhex.appimage)
+cask "warp"                    # you had Warp terminal in /opt
+
+# --- AI desktop apps ---
+cask "claude"                  # Claude Desktop
+
+# --- mobile / embedded dev (you do Android + ESP/PlatformIO + Flutter) ---
+cask "android-studio"
+# Flutter/ESP-IDF: install via mise/.tool-versions + PlatformIO VS Code extension
+
+# --- VMs on Apple Silicon (VirtualBox x86 VMs will NOT run natively) ---
+cask "utm"                     # ARM-friendly VM host; or parallels-desktop / vmware-fusion
+# Windows apps without a VM: brew install --cask whisky   (Wine/CrossOver for ARM)
+
+# --- gaming (optional) ---
+# cask "prismlauncher"         # Minecraft launcher you use
+cask "meld"                    # GUI diff (matches your git mergetool=meld)
+cask "rectangle"               # window mgmt (nice-to-have on mac)
+cask "iterm2"
+
+# --- fonts (for powerlevel10k icons) ---
+cask "font-meslo-lg-nerd-font"
+
+# --- Liferay / Java dev (you use blade) ---
+# blade CLI: install via your scripts/install_blade.sh or:
+#   brew install --cask zulu@8   # if you still need the JDK 8 lf-j8 alias

@@ -1,0 +1,13 @@
+adr-tools
+awscli
+bun
+flutter
+gitconfig
+gradle
+java
+maven
+nodejs
+pnpm
+python
+ruby
+yarn

@@ -16,4 +16,12 @@ alias docker_comp_list_all='docker compose ps -a --format "table {{.Names}}\t{{.
 
 # General
 alias upd='sudo apt update && sudo apt upgrade -y && sudo apt autoremove && sudo apt autoclean'
+alias upd-brew='brew update && brew upgrade'
+alias upd-snap='sudo snap refresh'
 alias listening='sudo netstat -tulp4n | grep LISTEN'
+
+# Liferay
+alias lf-j8='blade gw -i -Dorg.gradle.java.home=/home/mgsasaki/java/jdk1.8.0_171'
+alias gogo-shell='telnet localhost 11311'
+alias lf-check-formatting='blade gw checkSourceFormatting'
+alias build-backend='blade gw build -xpackageRunBuild -xnpmInstall'

@@ -1,5 +1,6 @@
 [user]
 	name = Marcello Gurgel Sasaki
+	email = marcello.sasaki@gmail.com
 [merge]
 	tool = meld
 [diff]
@@ -7,8 +8,14 @@
 	colorMoved = zebra
 [pull]
 	rebase = true
+[credential]
+	helper = cache
+[cola]
+	spellcheck = false
 [fetch]
 	prune = true
+[gui]
+	tabsize = 4
 
 [alias]
 
@@ -51,3 +58,13 @@
 
 # Tools
   dt = difftool --dir-diff
+
+# gitconfig.location.key origemmotos
+[includeIf "gitdir:~/work/origemmotos/"]
+	path = ~/.gitconfigs/origemmotos.gitconfig
+
+# gitconfig.location.key seatecnologia
+[includeIf "gitdir:~/work/sea/"]
+	path = ~/.gitconfigs/seatecnologia.gitconfig
+[init]
+	defaultBranch = main
