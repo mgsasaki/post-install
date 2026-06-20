@@ -38,5 +38,18 @@ brew "bash-git-prompt"
 # --- runtime version manager ---
 brew "asdf"            # reads .tool-versions; setup.sh re-adds plugins from asdf-plugins.txt
 
+# --- build deps for asdf-compiled runtimes (ruby/python from source on arm64) ---
+# Without these, ruby-build/python-build silently skip C extensions:
+#   libyaml→psych(YAML), openssl@3→openssl, readline→readline, xz→lzma,
+#   sqlite→sqlite3, libffi→ctypes, gmp→bignum.
+brew "openssl@3"
+brew "readline"
+brew "libyaml"
+brew "gmp"
+brew "xz"
+brew "sqlite"
+brew "libffi"
+brew "autoconf"
+
 # --- fonts (powerlevel10k prompt icons) ---
 cask "font-meslo-lg-nerd-font"
