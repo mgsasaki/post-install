@@ -12,6 +12,7 @@ brew "glab"            # GitLab CLI (you use it; config in the secrets bundle)
 brew "wget"
 brew "curl"
 brew "coreutils"
+brew "rsync"           # macOS ships an ancient rsync; this is modern (faster, --info=progress2)
 brew "telnet"          # for your gogo-shell alias
 brew "jq"
 brew "ripgrep"
