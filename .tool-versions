@@ -1,9 +1,11 @@
-ruby 2.7.1
+# ruby/python bumped from EOL 2.7.1 / 3.9.19 — those predate Apple Silicon and won't
+# build cleanly on arm64. Pin a project-local .tool-versions if a repo needs an older one.
+ruby 3.3.6
 nodejs 22.17.0
 yarn 1.22.22
 gradle 8.14.1
 maven 3.6.0
-python 3.9.19
+python 3.12.7
 gitconfig 1.0.0
 pnpm 8.15.3
 bun 1.2.14
